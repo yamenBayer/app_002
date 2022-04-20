@@ -84,6 +84,15 @@
         <main class="py-4">
             @yield('content2')
         </main>
+        <main class="py-4">
+            @yield('content3')
+        </main>
+        <main class="py-4">
+            @yield('content4')
+        </main>
+        <main class="py-4">
+            @yield('content5')
+        </main>
     </div>
 </body>
 </html>

@@ -21,4 +21,5 @@ Auth::routes();
 
 Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('profile.show');
 Route::get('/home/Homepage', [App\Http\Controllers\HomeController::class, 'index2'])->name('Homepage');
+Route::get('/all_category/{catName}', [App\Http\Controllers\HomeController::class, 'goToCat'])->name('getView');
 //Route::get('/home/HomePage', [App\Http\Controllers\HomeController::class, 'index2'])->name('home/Homepage');

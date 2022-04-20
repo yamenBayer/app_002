@@ -29,5 +29,11 @@ class HomeController extends Controller
     {
         return view('Homepage');
     }
+    public function goToCat(String $catName)
+    {
+        return view('all_category/'.$catName);
+    }
+
+
   
 }
