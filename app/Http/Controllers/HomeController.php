@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
     public function index2()
     {
-        return view('Homepage');
+        return view('welcome');
     }
     public function goToCat(String $catName)
     {

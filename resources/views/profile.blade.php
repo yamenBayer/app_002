@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:70px">
     <div style="display: flex; flex-direction: column; justify-content: space-evenly;align-items:center" class="userInfo">
 
       <div class="pt-5" style="width:70%">
