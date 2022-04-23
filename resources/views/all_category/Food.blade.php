@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('welcome')
 
 @section('content4')
 <div class="action_sec">
