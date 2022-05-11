@@ -1,29 +1,4 @@
-.Container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(182, 174, 174);
-    height: 750px;
-    width: 100%;
-}
-
-.mainNav{
-    color: rgb(199, 56, 56);
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-}
-
-.Home_nav{
-    color: rgb(81, 145, 146);
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    position: fixed;
+.{
+ color: #b20505;   
 }
 
