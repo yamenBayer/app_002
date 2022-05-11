@@ -10,8 +10,6 @@
       <div style="display: flex;flex-direction:column;  justify-content: space-between;align-items:center;height:100%;width:50%">
        <div><h1 id="username">{{ $user->username }}</h1></div>
        <div style="display:flex;flex-direction:column;justify-content: center;align-items:center">
-          <div ><strong>{{ $user->profile->title }}</strong></div>
-          <div><strong>{{ $user->profile->desc }}</strong></div>  
        </div>
       </div>
 
