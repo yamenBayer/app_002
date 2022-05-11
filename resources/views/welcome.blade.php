@@ -77,7 +77,7 @@
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ Auth::user()->username }}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ url('/profile/1') }}">My Profile</a></li>
+            <li><a class="dropdown-item" href="./profile/{{ Auth::user()->id }}">My Profile</a></li>
             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
             </a></li>

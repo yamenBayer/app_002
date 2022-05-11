@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('profile.show');
+Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('profile');
 Route::get('/all_category/{catName}', [App\Http\Controllers\HomeController::class, 'goToCat'])->name('getView');
