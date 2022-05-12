@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('profile');
-Route::get('/all_category/{catName}', [App\Http\Controllers\HomeController::class, 'goToCat'])->name('getView');
+Route::get('/store/', [App\Http\Controllers\HomeController::class, 'getStore'])->name('Store');
+Route::get('/add_Game/', [App\Http\Controllers\HomeController::class, 'get_add_Game'])->name('Add_Game');
+Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('Profile');
+Route::get('/all_category/{catName}', [App\Http\Controllers\HomeController::class, 'goToCat'])->name('GetCat');
+Route::post('save', [HomeController::class, 'save'])->name('Save');

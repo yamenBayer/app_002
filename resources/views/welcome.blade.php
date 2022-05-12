@@ -31,7 +31,12 @@
         <link rel="png" href="{{ asset('img/carLogo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}"> 
         <link rel="stylesheet" href="{{ asset('css/layout.css') }}" >
-    
+
+        <style>
+          body{
+            color: rgb(225, 225, 225);
+          }
+        </style>
     </head>
     <body class="antialiased">
 
@@ -47,13 +52,16 @@
         <li class="nav-item">
         <a class="nav-link" href="{{ route('Home') }}"><button class="btn btn-danger">Home</button></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('Store') }}">Store</a>
+          </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route('getView', 'Cloth') }}">CLoth</a></li>
-            <li><a class="dropdown-item" href="{{ route('getView','Technology') }}">Technology</a></li>
-            <li><a class="dropdown-item" href="{{ route('getView','Food') }}">Food</a></li>
+            <li><a class="dropdown-item" href="{{ route('GetCat', 'Fantasy') }}">Fantasy</a></li>
+            <li><a class="dropdown-item" href="{{ route('GetCat','Action') }}">Action</a></li>
+            <li><a class="dropdown-item" href="{{ route('GetCat','Adventure') }}">Adventure</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -111,7 +119,13 @@
         @yield('home')
       </main>
       <main>
-        @yield('profile')
+        @yield('store')
+      </main>
+      <main>
+        @yield('add_Game')
+      </main>
+      <main>
+        @yield('category')
       </main>
       <main>
         @yield('login')
@@ -119,6 +133,7 @@
       <main>
         @yield('signup')
       </main>
+      
                
                         
       <script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>

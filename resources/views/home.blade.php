@@ -3,7 +3,18 @@
 @section('home')
 
 <!-- Carousel wrapper -->
+
+    <center><marquee  width="70%" direction="right" height="20px" 
+    style="margin-top:10px; 
+    color: #ddd;
+    animation-name: changeColor; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;">
+      You play, you stay
+      </marquee></center>
 <div class="container" style="width: 30%">
+
+
 <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
