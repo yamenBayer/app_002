@@ -12,6 +12,7 @@
 
 
         <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
@@ -37,9 +38,9 @@
 
     <nav class="navbar  navbar-expand-sm bg-dark navbar-dark navbar-fixed-top">
     <div class="container-fluid">
-    <a class="navbar-brand" href="{{ route('Home') }}"><i class="fas fa-infinity fa-2x me-1  p-2" style="color:#AB3215;"> </i> |</a>
+    <a class="navbar-brand" href="{{ route('Home') }}"><i class="fas fa-infinity fa-2x me-1  p-2" style="color:#AB3215;"></i><y class="me-2" style="color: rgb(165, 68, 68) ;font-family: fantasy;font-size: 25px">UDTeam |</y> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+      <i class="fas fa-stream" style="color: rgb(165, 68, 68)"></i>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar navbar-nav me-auto">
@@ -74,10 +75,11 @@
       @if (Route::has('login'))
       <ul class="nav navbar-nav">
       @auth
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown me-5">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ Auth::user()->username }}</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./profile/{{ Auth::user()->id }}">My Profile</a></li>
+            <li><a class="dropdown-item" href="#">My Cash: {{ Auth::user()->points }}$</a></li>
+            <li><a class="dropdown-item" href="./GamesList/{{ Auth::user()->id }}">My Games</a></li>
             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
             </a></li>
@@ -88,12 +90,12 @@
         </form>
       @else
         <li>
-            <a class="nav-link me-3" href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-user-alt " style="color: #AB3215"> |</i> </a>
+            <a class="nav-link me-3" href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-user-alt me-2" style="color: #AB3215"> </i>| login </a>
         </li>
         
       @if (Route::has('register'))
         <li>
-            <a class="nav-link" href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus " style="color: #AB3215"> |</i></a>
+            <a class="nav-link" href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus me-2" style="color: #AB3215"> </i>| Signup</a>
         </li>
         @endif
         @endauth
@@ -105,19 +107,21 @@
 </nav>
 
  
-      <main class="py-4">
-        @yield('content')
+      <main>
+        @yield('home')
       </main>
-      <main class="py-4">
-        @yield('content3')
+      <main>
+        @yield('profile')
       </main>
-      <main class="py-4">
-        @yield('content4')
+      <main>
+        @yield('login')
       </main>
-      <main class="py-4">
-        @yield('content5')
-      </main>                  
+      <main>
+        @yield('signup')
+      </main>
+               
                         
-
+      <script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
     </body>
 </html>

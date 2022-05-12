@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('Home');
 
 Auth::routes();
 
+Route::get('/home/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile/{user}', [App\Http\Controllers\profile_controller::class, 'index'])->name('profile');
 Route::get('/all_category/{catName}', [App\Http\Controllers\HomeController::class, 'goToCat'])->name('getView');

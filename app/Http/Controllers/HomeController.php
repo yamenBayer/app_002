@@ -21,14 +21,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('profile');
-    }
-    public function index2()
-    {
-        return view('welcome');
-    }
+
     public function goToCat(String $catName)
     {
         return view('all_category/'.$catName);
