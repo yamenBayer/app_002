@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\game;
 
 class HomeController extends Controller
 {
@@ -22,27 +23,26 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
  
-    public function save(Request $request)
+    public function uploadGame(Request $request)
     {
-         
-        $validatedData = $request->validate([
-         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+     
  
-        ]);
- 
-        $name = $request->file('image')->getClientOriginalName();
- 
-        $path = $request->file('image')->store('public/img/games');
+        $name = $request->get('name');
+        $url = $request->get('url');
+        $type = $request->get('gameType');
+        $path = $request->file('image')->store('public/img/games/');
  
  
-        $save = new Photo;
+        $newGame = new game;
  
-        $save->name = $name;
-        $save->path = $path;
+        $newGame->name = $name;
+        $newGame->url = $url;
+        $newGame->type = $type;
+        $newGame->img_url = $path;
  
-        $save->save();
- 
-        return redirect('add_Game')->with('status', 'Image Has been uploaded');
+        $newGame->save();
+
+        return redirect()->route('Store')->with('status', 'Game Has been uploaded');
  
     }
     public function goToCat(String $catName)
