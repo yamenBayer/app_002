@@ -56,14 +56,6 @@
           <a class="nav-link" href="{{ route('Store') }}">Store</a>
           </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route('GetCat', 'Fantasy') }}">Fantasy</a></li>
-            <li><a class="dropdown-item" href="{{ route('GetCat','Action') }}">Action</a></li>
-            <li><a class="dropdown-item" href="{{ route('GetCat','Adventure') }}">Adventure</a></li>
-          </ul>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
@@ -87,7 +79,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ Auth::user()->username }}</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">My Cash: {{ Auth::user()->points }}$</a></li>
-            <li><a class="dropdown-item" href="./GamesList/{{ Auth::user()->id }}">My Games</a></li>
+            <li><a class="dropdown-item" href="{{route('my_games')}}">My Games</a></li>
             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
             </a></li>
@@ -116,26 +108,30 @@
 
  
       <main>
-        @yield('home')
+        @yield('content')
       </main>
-      <main>
-        @yield('store')
+
+        @yield('auth')
       </main>
-      <main>
-        @yield('add_Game')
-      </main>
-      <main>
-        @yield('category')
-      </main>
-      <main>
-        @yield('login')
-      </main>
-      <main>
-        @yield('signup')
-      </main>
+
       
                
-                        
+      <footer class="d-flex align-items-center justify-content-evenly bg-dark w-100" style="height: 50px;   position: fixed;
+      bottom: 0;">
+        
+        <h5> &copy; copyright 2022 , All rights reserved | Designed by<hi class="text-danger"> UDTeam</hi></h5>
+      
+        <div>
+              <a href="https://www.facebook.com/" style="color: #ddd;"><i class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com/" style="color: #ddd;"><i class="fab fa-twitter"></i></a>
+              <a href="https://myaccount.google.com/" style="color: #ddd;"><i class="fab fa-google-plus"></i></a>
+              <a href="https://www.pinterest.com/" style="color: #ddd;"><i class="fab fa-pinterest"></i></a>
+              <a href="https://www.instagram.com/" style="color: #ddd;"><i class="fab fa-instagram"></i></a>
+        </div>
+      
+      
+      </footer>
+
       <script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
       <script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
     </body>

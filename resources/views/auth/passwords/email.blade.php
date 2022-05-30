@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('welcome')
 
 @section('content')
 <div class="container" style="margin-top:70px">

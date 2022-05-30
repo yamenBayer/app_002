@@ -1,3 +1,20 @@
+.card-edited {
+    box-shadow: 0 9px 10px rgba(100, 4, 4, 0.63);
+    overflow: hidden;
+    position: relative;
+    animation-name: fade; 
+    animation-duration: .5s; 
+    transition: .4s all ease;
+    justify-content: space-evenly;
+}
+ 
+.card-edited:hover{
+transform: translateY(-20px);
+animation-name: shake; 
+animation-duration: 1s; 
+animation-iteration-count: infinite;
+transition: .3s all ease;
+}
 
 @keyframes shake { 
 

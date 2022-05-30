@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('home')
+@section('content')
 
 <!-- Carousel wrapper -->
 
